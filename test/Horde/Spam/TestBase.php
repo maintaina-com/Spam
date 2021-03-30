@@ -6,9 +6,14 @@
  * @package    Spam
  * @subpackage UnitTests
  */
-class Horde_Spam_TestBase extends Horde_Test_Case
+namespace Horde\Spam;
+use Horde_Test_Case as TestCase;
+use \Horde_Spam_Base;
+use \Horde_Spam;
+
+class TestBase extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->spam_file = __DIR__ . '/fixtures/sample-spam.txt';
         $this->spam = file_get_contents($this->spam_file);
